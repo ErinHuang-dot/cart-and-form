@@ -1,0 +1,53 @@
+/* cart-form */
+.col-fit-m {
+    width: 200px;
+}
+
+.key-img {
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.more-modal-img {
+    height: 300px;
+    object-fit: cover; 
+    object-position: center;
+}
+
+
+.col-w-l {
+    width: 35%;
+}
+  
+.col-w-m {
+    width: 20%;
+}
+
+.col-w-s {
+    width: 12%;
+}
+
+.stars-wrap {
+    list-style: none;
+}
+
+.stars-wrap .star {
+    width: 20px;
+}
+
+.stars-wrap li + li {
+    margin-left: .25rem;
+}
+
+
+
+/* index.html */
+.wrap {
+    height: 100vh;
+}
+
+.form-login {
+    max-width: 265px;
+}
+

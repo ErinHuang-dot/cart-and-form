@@ -7,7 +7,7 @@ Object.keys(VeeValidateRules).forEach(rule => {
     }
 });
 
-VeeValidateI18n.loadLocaleFromURL('../zh_TW.json');
+VeeValidateI18n.loadLocaleFromURL('./zh_TW.json');
 
 // Activate the locale
 VeeValidate.configure({
@@ -120,8 +120,9 @@ const cartApp = Vue.createApp ({
             })  
         },
         isPhone(value) {
-            const phoneNumber = /(^[0-9]{2,4}\-[0-9]{5,8}$)|(^\([0-9]{2,4}\)[0-9]{5,8}$)|^(09)[0-9]{8}$/
-            return phoneNumber.test(value) ? true : '需要正確的電話號碼'
+            const phoneNumber = /^(09)[0-9]{8}$/;
+            // const phoneNumber = /(^[0-9]{2,4}\-[0-9]{5,8}$)|(^\([0-9]{2,4}\)[0-9]{5,8}$)|^(09)[0-9]{8}$/
+            return phoneNumber.test(value) ? true : '需要正確的電話號碼';
         },
         onSubmit() {            
             const data = this.orderData;

@@ -1,5 +1,6 @@
 /* global axios bootstrap */
 
+
 // 表單驗證
 Object.keys(VeeValidateRules).forEach(rule => {
     if (rule !== 'default') {
@@ -33,14 +34,17 @@ const cartApp = Vue.createApp ({
                     address:'',
                 },
                 message:''
-            }
+            },
+            isLoading: false
         }
     },
 
     methods: {
         getProducts() {
+            this.isLoading = true;
             axios.get(`${url}/api/${path}/products/all`)
             .then((res) => {
+                this.isLoading = false;
                 this.products = res.data.products.slice(0, 5);
             })
             .catch((error) => {
@@ -193,6 +197,10 @@ cartApp.component('more-modal', {
 
     }
 });
+
+
+cartApp.component('loading', VueLoading.Component);
+
 cartApp.component('VForm', VeeValidate.Form);
 cartApp.component('VField', VeeValidate.Field);
 cartApp.component('ErrorMessage', VeeValidate.ErrorMessage);
